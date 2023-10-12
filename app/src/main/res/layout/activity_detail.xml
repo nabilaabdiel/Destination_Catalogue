@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.detail.DetailActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_object"
+                android:layout_width="match_parent"
+                android:layout_height="286dp"
+                android:layout_alignParentTop="true"
+                android:scaleType="centerCrop"
+                android:background="@drawable/error_placeholder" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_alignBottom="@id/btn_rute"
+                android:src="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_object"
+                android:layout_marginStart="24dp"
+                android:fontFamily="@font/inter_bold"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                tools:text="Place Name" />
+
+            <LinearLayout
+                android:id="@+id/address_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_title"
+                android:layout_marginTop="18dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/icon_loc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:src="@drawable/ic_baseline_location_on_24" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="24dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    tools:text="Location" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/address_parent"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/inter_semi_bold"
+                android:text="Description"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:id="@+id/category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_description"
+                android:layout_marginTop="18dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:text="Category :"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="12sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="24dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    tools:text="Nature" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_information"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/category"
+                android:layout_marginTop="9dp"
+                android:paddingHorizontal="24dp"
+                android:textColor="@color/black"
+                tools:text="Information" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_rute"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_below="@id/tv_information"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="101dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/btn_login"
+                android:text="Map Route"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="18dp">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_round_arrow_back_ios_24"
+            android:layout_marginStart="18dp"
+            android:layout_centerVertical="true"
+            app:tint="@color/black"/>
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_outline_share_24"
+            android:layout_marginEnd="48dp"
+            android:layout_centerVertical="true"
+            android:layout_alignEnd="@id/frame_btn"
+            app:tint="@color/black"/>
+
+        <FrameLayout
+            android:id="@+id/frame_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true">
+
+            <ImageView
+                android:id="@+id/btn_bookmark"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:src="@drawable/ic_round_bookmark" />
+
+            <ImageView
+                android:id="@+id/btn_lose"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:src="@drawable/ic_round_bookmark_border"
+                android:visibility="gone" />
+
+        </FrameLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>
