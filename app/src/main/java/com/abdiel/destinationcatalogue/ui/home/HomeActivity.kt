@@ -48,13 +48,14 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(R.layout.a
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        getUser()
+
         binding.cvProfile.setOnClickListener {
             activityLauncher.launch(createIntent<ProfileActivity>()) {
                 getUser()
             }
         }
 
-        getUser()
         viewModel.imageSlider()
         observe()
 
@@ -83,7 +84,8 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(R.layout.a
                 listDestinationHome.addAll(listAllDestinationHome)
                 adapter.notifyItemInserted(0)
             } else {
-                val filter = listAllDestinationHome.filter { it?.name?.contains("$text", true) == true }
+                val filter =
+                    listAllDestinationHome.filter { it?.name?.contains("$text", true) == true }
                 listDestinationHome.clear()
                 adapter.notifyDataSetChanged()
                 listDestinationHome.addAll(filter)
@@ -118,13 +120,12 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(R.layout.a
             }
         }
 //        viewModel.imageSlider
-        //TODO: Slider Image nya belum selesai
+        //TODO: The image slider is not complicated
 
     }
 
     private fun initSlider(data: List<ImageSlider>) {
         val imageList = ArrayList<SlideModel>()
-        Log.d("slider", "tesImage: $data")
         data.forEach {
             imageList.add(SlideModel(it.photo, ScaleTypes.CENTER_CROP))
         }

@@ -282,7 +282,7 @@
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:layout_marginEnd="24dp"
-                imageUrl='@{user.photo}'
+                imageUrl="@{user.profile_photo_path}"
                 android:background="@drawable/circle"
                 android:src="@drawable/ic_round_person_24"/>
 

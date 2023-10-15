@@ -84,6 +84,7 @@
                     android:layout_marginEnd="12dp"
                     android:background="@color/transparent"
                     android:src="@drawable/ic_round_bookmark_border"
+                    android:visibility='@{data.favorite ? View.GONE : View.VISIBLE}'
                     app:layout_constraintBottom_toBottomOf="@id/tv_title"
                     app:layout_constraintEnd_toEndOf="@id/tv_list_item"
                     app:layout_constraintTop_toTopOf="@id/tv_title" />
@@ -95,6 +96,7 @@
                     android:layout_marginEnd="12dp"
                     android:background="@color/transparent"
                     android:src="@drawable/ic_round_bookmark"
+                    android:visibility='@{data.favorite ? View.VISIBLE : View.GONE}'
                     app:layout_constraintBottom_toBottomOf="@id/tv_title"
                     app:layout_constraintEnd_toEndOf="@id/tv_list_item"
                     app:layout_constraintTop_toTopOf="@id/tv_title" />

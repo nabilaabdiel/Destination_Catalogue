@@ -1,9 +1,7 @@
 package com.abdiel.destinationcatalogue.api
 
-import com.google.android.gms.common.internal.safeparcel.SafeParcelable.Param
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
-import okhttp3.ResponseBody
 import retrofit2.http.*
 
 interface ApiService {
@@ -54,12 +52,7 @@ interface ApiService {
     @GET("notes/{id}")
     suspend fun getNoteById(): String
 
-    //Favorite Notes
-    @POST("notes/{id_note}/favorite")
-    suspend fun favNotes(
-        @Path("id_note") id_note: String?,
-        @Body favorite: RequestBody
-    ): String
+
 
     //Create Notes
     @FormUrlEncoded
@@ -84,8 +77,9 @@ interface ApiService {
     suspend fun getProfile(): String
 
     //Logout
-    @DELETE("api/auth/logout")
-    suspend fun logout(): String
+    @POST("api/auth/logout")
+    suspend fun logout(
+    ): String
 
     //Update Profile
     @FormUrlEncoded
@@ -122,5 +116,12 @@ interface ApiService {
     //Get Nature List
     @GET("api/auth/nature_destinations")
     suspend fun natureDestinations(
+    ) : String
+
+    //Bookmark
+    @FormUrlEncoded
+    @POST("api/auth/addbookmark")
+    suspend fun addBookmark(
+        @Field("destination_id")destination_id : Int?
     ) : String
 }

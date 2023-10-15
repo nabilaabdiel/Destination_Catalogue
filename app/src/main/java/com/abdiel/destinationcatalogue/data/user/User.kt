@@ -13,6 +13,6 @@ data class User(
     val username: String?,
     @SerializedName("phone")
     val phone: String?,
-    @SerializedName("photo")
-    val photo: String?
+    @SerializedName("profile_photo_path")
+    val profile_photo_path: String?
 )

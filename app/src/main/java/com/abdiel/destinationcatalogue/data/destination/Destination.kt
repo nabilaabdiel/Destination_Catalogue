@@ -22,6 +22,8 @@ data class Destination(
     @SerializedName("name")
     val name: String?,
     @SerializedName("photo")
-    val photo: String?
+    val photo: String?,
+    @SerializedName("favorite")
+    val favorite: Boolean?
 
 ) : Parcelable
