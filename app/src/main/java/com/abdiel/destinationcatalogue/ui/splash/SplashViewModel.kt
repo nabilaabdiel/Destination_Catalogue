@@ -9,11 +9,11 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class SplashViewModel @Inject constructor(private val session: Session): BaseViewModel() {
+class SplashViewModel @Inject constructor(private val session: Session) : BaseViewModel() {
     fun splash(done: (Boolean) -> Unit) = viewModelScope.launch {
 
         val userLogin = session.getString(Const.USER.PROFILE)
 
-        done (userLogin == "Login")
+        done(userLogin == "Login")
     }
 }

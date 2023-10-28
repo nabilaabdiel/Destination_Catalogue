@@ -1,4 +1,3 @@
-
 package com.abdiel.destinationcatalogue.ui.update.profile
 
 import android.annotation.SuppressLint
@@ -36,6 +35,7 @@ import com.crocodic.core.extension.snacked
 import com.crocodic.core.extension.textOf
 import com.crocodic.core.extension.tos
 import com.crocodic.core.helper.DateTimeHelper
+import dagger.hilt.android.AndroidEntryPoint
 import id.zelory.compressor.Compressor
 import id.zelory.compressor.constraint.format
 import id.zelory.compressor.constraint.quality
@@ -47,10 +47,13 @@ import java.io.FileOutputStream
 import java.io.IOException
 import java.io.InputStream
 
-class UpdateProfileActivity : BaseActivity<ActivityUpdateProfileBinding, UpdateProfileViewModel>(R.layout.activity_update_profile) {
+@AndroidEntryPoint
+class UpdateProfileActivity :
+    BaseActivity<ActivityUpdateProfileBinding, UpdateProfileViewModel>(R.layout.activity_update_profile) {
 
     private var photoFile: File? = null
     private var userName: String? = null
+//    private var profilePicture : String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -77,6 +80,7 @@ class UpdateProfileActivity : BaseActivity<ActivityUpdateProfileBinding, UpdateP
                             ApiStatus.LOADING -> loadingDialog.show("On Progress")
                             ApiStatus.SUCCESS -> {
                                 loadingDialog.dismiss()
+                                setResult(7)
                                 finish()
                             }
                             else -> loadingDialog.setResponse(it.message ?: return@collect)
@@ -102,12 +106,13 @@ class UpdateProfileActivity : BaseActivity<ActivityUpdateProfileBinding, UpdateP
 
     private fun validateForm() {
         val name = binding.etUsername.textOf()
+        val profilePicture = session.getUser()?.profile_photo_path
 
         if (photoFile == null) {
             if (name.isEmpty()) {
                 binding.root.snacked("Name is empty")
             } else {
-                Log.d("foto", "photo null")
+                Log.d("foto", "$profilePicture")
                 viewModel.updateProfile(name)
             }
         } else {
@@ -125,6 +130,8 @@ class UpdateProfileActivity : BaseActivity<ActivityUpdateProfileBinding, UpdateP
         val users = session.getUser()
         binding.user = users
         userName = users?.username
+//        profilePicture = users?.profile_photo_path
+//        Log.d("cek picture",profilePicture.toString())
 
     }
 
@@ -307,7 +314,7 @@ class UpdateProfileActivity : BaseActivity<ActivityUpdateProfileBinding, UpdateP
             return Compressor.compress(this, filePhoto) {
                 resolution(720, 720)
                 quality(80)
-                format (Bitmap.CompressFormat.PNG)
+                format(Bitmap.CompressFormat.PNG)
                 size(515)
             }
         } catch (e: Exception) {

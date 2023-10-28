@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <data>
+
         <variable
             name="user"
             type="com.abdiel.destinationcatalogue.data.user.User" />
@@ -16,9 +18,9 @@
 
         <ImageView
             android:id="@+id/iv_profile"
+            imageUrl="@{user.profile_photo_path}"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            imageUrl="@{user.profile_photo_path}"
             android:background="@drawable/ic_round_person_24" />
 
         <TextView
@@ -43,19 +45,19 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginStart="38dp"
-            android:layout_marginEnd="38dp"
             android:layout_marginTop="32dp"
+            android:layout_marginEnd="38dp"
             android:fontFamily="@font/inter_regular"
             android:gravity="center_vertical"
-            app:boxStrokeColor="@color/light_primer"
-            app:boxCornerRadiusBottomStart="5dp"
-            app:boxCornerRadiusBottomEnd="5dp"
-            app:boxCornerRadiusTopEnd="5dp"
-            app:boxCornerRadiusTopStart="5dp"
-            app:boxStrokeWidth="1dp"
-            app:hintTextColor="@color/light_secondary"
             android:inputType="text"
             android:textSize="14sp"
+            app:boxCornerRadiusBottomEnd="5dp"
+            app:boxCornerRadiusBottomStart="5dp"
+            app:boxCornerRadiusTopEnd="5dp"
+            app:boxCornerRadiusTopStart="5dp"
+            app:boxStrokeColor="@color/light_primer"
+            app:boxStrokeWidth="1dp"
+            app:hintTextColor="@color/light_secondary"
             tools:ignore="Autofill">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -65,11 +67,11 @@
                 android:layout_gravity="center_horizontal"
                 android:fontFamily="@font/inter_regular"
                 android:hint="Name"
-                android:text='@{user.username}'
-                app:drawableEndCompat="@drawable/ic_outline_edit"
-                app:drawableTint="@color/black"
                 android:inputType="text"
-                android:textSize="14sp"/>
+                android:text='@{user.username}'
+                android:textSize="14sp"
+                app:drawableEndCompat="@drawable/ic_outline_edit"
+                app:drawableTint="@color/black" />
 
         </com.google.android.material.textfield.TextInputLayout>
 

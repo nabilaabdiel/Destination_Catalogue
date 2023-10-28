@@ -26,13 +26,11 @@ class UpdateProfileViewModel @Inject constructor(
     private val session: Session
 ) : BaseViewModel() {
 
-    fun updateProfile (name: String) = viewModelScope.launch {
+    fun updateProfile(name: String) = viewModelScope.launch {
         _apiResponse.emit(ApiResponse().responseLoading())
-        ApiObserver({ apiService.editProfile(name)}, false,
+        ApiObserver({ apiService.editProfile(name) }, false,
             object : ApiObserver.ResponseListener {
                 override suspend fun onSuccess(response: JSONObject) {
-                    val data = response.getJSONObject(ApiCode.DATA).toObject<User>(gson)
-                    session.saveUser(data)
                     _apiResponse.emit(ApiResponse().responseSuccess("profile updated"))
                 }
 
@@ -52,8 +50,6 @@ class UpdateProfileViewModel @Inject constructor(
             { apiService.editProfileImg(name, filePart) }, false,
             object : ApiObserver.ResponseListener {
                 override suspend fun onSuccess(response: JSONObject) {
-                    val data = response.getJSONObject(ApiCode.DATA).toObject<User>(gson)
-                    session.saveUser(data)
                     _apiResponse.emit(ApiResponse().responseSuccess("profile updated"))
                 }
 

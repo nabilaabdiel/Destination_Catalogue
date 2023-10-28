@@ -6,17 +6,17 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.destination.all.AllActivity">
+        tools:context=".ui.destination.favorite.FavoriteActivity">
 
         <TextView
-            android:id="@+id/bar_all"
+            android:id="@+id/bar_bookmark"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_marginBottom="12dp"
             android:background="@drawable/bar_home"
             android:fontFamily="@font/inter_semi_bold"
             android:gravity="center"
-            android:text="ALL"
+            android:text="BOOKMARK"
             android:textColor="@color/white"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -33,7 +33,7 @@
             android:paddingVertical="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/bar_all">
+            app:layout_constraintTop_toBottomOf="@id/bar_bookmark">
 
             <TextView
                 android:id="@+id/tv_empty"

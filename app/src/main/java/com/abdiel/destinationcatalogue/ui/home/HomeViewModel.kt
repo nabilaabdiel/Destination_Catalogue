@@ -40,12 +40,10 @@ class HomeViewModel @Inject constructor(
                 override suspend fun onSuccess(response: JSONObject) {
                     val data = response.getJSONArray(ApiCode.DATA).toList<Destination>(gson)
                     _listAllDestination.emit(data)
-                    Log.d("try", "success")
                 }
 
                 override suspend fun onError(response: ApiResponse) {
                     super.onError(response)
-                    Log.d("try", "error")
                 }
             })
     }

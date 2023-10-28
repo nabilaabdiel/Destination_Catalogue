@@ -1,5 +1,7 @@
 package com.abdiel.destinationcatalogue.data.constant
 
+import java.io.File
+
 object Const {
 
     object USER {
@@ -15,6 +17,8 @@ object Const {
 
     object LIST {
         const val LIST_DESTINATION = "list_destination"
+        const val SAVED_DESTINATION= 301
+        const val UNSAVED_DESTINATION = 303
     }
 
     object TIMEOUT {

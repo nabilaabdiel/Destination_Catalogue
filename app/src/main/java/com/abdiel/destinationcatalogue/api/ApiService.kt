@@ -27,14 +27,7 @@ interface ApiService {
 
 
 
-    //Change Password
-    @FormUrlEncoded
-    @POST("auth/change-password")
-    suspend fun changePassword(
-        @Field("old_password") old_password: String,
-        @Field("new_password") new_password: String,
-        @Field("password_confirmation") password_confirmation: String
-    ): String
+
 
     //Get Notes
     @GET("notes")
@@ -85,7 +78,7 @@ interface ApiService {
     @FormUrlEncoded
     @POST("api/auth/editprofile")
     suspend fun editProfile(
-        @Field("username") username: String?
+        @Field("username") username: String?,
     ): String
 
     //Update Profile
@@ -94,6 +87,15 @@ interface ApiService {
     suspend fun editProfileImg(
         @Part("username") username: String?,
         @Part photo: MultipartBody.Part?
+    ): String
+
+    //Change Password
+    @FormUrlEncoded
+    @POST("api/auth/editpassword")
+    suspend fun changePassword(
+        @Field("old_password") old_password: String,
+        @Field("new_password") new_password: String,
+        @Field("confirm_password") confirm_password: String
     ): String
 
     //Destin
@@ -118,10 +120,17 @@ interface ApiService {
     suspend fun natureDestinations(
     ) : String
 
-    //Bookmark
+    //Add Bookmark
     @FormUrlEncoded
     @POST("api/auth/addbookmark")
     suspend fun addBookmark(
+        @Field("destination_id")destination_id : Int?
+    ) : String
+
+    //Remove Bookmark
+    @FormUrlEncoded
+    @POST("api/auth/remove_bookmark")
+    suspend fun removeBookmark(
         @Field("destination_id")destination_id : Int?
     ) : String
 }

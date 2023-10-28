@@ -37,18 +37,27 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(R.layout.a
     private val adapter by lazy {
         //Adapter
         CoreListAdapter<ListDestinationBinding, Destination>(R.layout.list_destination)
-            .initItem(listDestinationHome) { _, data ->
+            .initItem(listDestinationHome) { position, data ->
                 activityLauncher.launch(createIntent<DetailActivity> {
                     putExtra(Const.LIST.LIST_DESTINATION, data)
-                })
+                }) {
+                    if (it.resultCode == Const.LIST.SAVED_DESTINATION) {
+                        favorite(position, true)
+                    } else {
+                        favorite(position, false)
+                    }
+                }
             }
+    }
+
+    fun favorite(position: Int, saved: Boolean) {
+        listDestinationHome[position]?.favorite = saved
+        adapter.notifyItemChanged(position)
     }
 
     @SuppressLint("NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        getUser()
 
         binding.cvProfile.setOnClickListener {
             activityLauncher.launch(createIntent<ProfileActivity>()) {
@@ -58,6 +67,8 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(R.layout.a
 
         viewModel.imageSlider()
         observe()
+        getUser()
+        initSwipe()
 
         binding.rvHome.adapter = adapter
 
@@ -109,6 +120,8 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(R.layout.a
                         listDestinationHome.addAll(destination)
                         listAllDestinationHome.addAll(destination)
                         adapter.notifyItemInserted(0)
+                        binding.tvEmpty.isVisible = destination.isEmpty()
+                        binding.swipeRefresh.isRefreshing = false
                     }
                 }
 
@@ -135,5 +148,12 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(R.layout.a
     private fun getUser() {
         val users = session.getUser()
         binding.user = users
+    }
+
+    private fun initSwipe() {
+        binding.swipeRefresh.setProgressViewOffset(false, 0, 280)
+        binding.swipeRefresh.setOnRefreshListener {
+            viewModel.allDestination()
+        }
     }
 }

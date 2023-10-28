@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <data>
+
         <variable
             name="user"
             type="com.abdiel.destinationcatalogue.data.user.User" />
     </data>
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
@@ -15,20 +18,20 @@
         tools:context=".ui.profile.ProfileActivity">
 
         <ImageView
+            imageUrl="@{user.profile_photo_path}"
             android:layout_width="148dp"
             android:layout_height="148dp"
-            imageUrl="@{user.profile_photo_path}"
             android:background="@drawable/ic_round_person_24"
-            android:backgroundTint="@color/white"/>
+            android:backgroundTint="@color/white" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/inter_bold"
+            android:text='@{user.username}'
             android:textColor="@color/white"
             android:textSize="20sp"
-            android:text='@{user.username}'
             tools:text="Zayn Regard" />
 
         <TextView
@@ -40,50 +43,50 @@
             android:text="Edit Profile "
             android:textColor="@color/white"
             android:textSize="14sp"
-            app:drawableTint="@color/white"
-            app:drawableEndCompat="@drawable/ic_outline_edit" />
+            app:drawableEndCompat="@drawable/ic_outline_edit"
+            app:drawableTint="@color/white" />
 
         <TextView
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
+            android:layout_marginTop="18dp"
             android:layout_marginEnd="24dp"
             android:background="@drawable/btn_profile"
             android:fontFamily="@font/inter_regular"
             android:padding="12dp"
             android:text='@{user.email}'
-            tools:text="nasaa@gmail.com"
-            android:layout_marginTop="18dp"
             android:textColor="@color/black"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            tools:text="nasaa@gmail.com" />
 
         <TextView
             android:id="@+id/phone_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="24dp"
             android:background="@drawable/btn_profile"
             android:fontFamily="@font/inter_regular"
             android:padding="12dp"
             android:text='@{user.phone}'
-            tools:text="082124540060"
-            android:layout_marginTop="10dp"
             android:textColor="@color/black"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            tools:text="082124540060" />
 
         <TextView
             android:id="@+id/btn_edit_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="24dp"
             android:background="@drawable/btn_profile"
             android:fontFamily="@font/inter_regular"
             android:padding="12dp"
             android:text="Change Password"
-            android:layout_marginTop="10dp"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:drawableEndCompat="@drawable/ic_outline_vpn_key_24" />
@@ -93,12 +96,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="24dp"
             android:background="@drawable/btn_profile"
             android:fontFamily="@font/inter_regular"
             android:padding="12dp"
             android:text="Bookmark"
-            android:layout_marginTop="10dp"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:drawableEndCompat="@drawable/ic_outline_bookmark_added_24" />
@@ -108,12 +111,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="24dp"
             android:background="@drawable/btn_profile"
             android:fontFamily="@font/inter_regular"
             android:padding="12dp"
             android:text="Logout"
-            android:layout_marginTop="10dp"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:drawableEndCompat="@drawable/ic_round_logout_24" />

@@ -7,12 +7,14 @@ import androidx.lifecycle.repeatOnLifecycle
 import com.abdiel.destinationcatalogue.R
 import com.abdiel.destinationcatalogue.base.activity.BaseActivity
 import com.abdiel.destinationcatalogue.databinding.ActivityProfileBinding
+import com.abdiel.destinationcatalogue.ui.destination.favorite.FavoriteActivity
 import com.abdiel.destinationcatalogue.ui.login.LoginActivity
 import com.abdiel.destinationcatalogue.ui.update.password.UpdatePasswordActivity
 import com.abdiel.destinationcatalogue.ui.update.profile.UpdateProfileActivity
 import com.crocodic.core.api.ApiStatus
 import com.crocodic.core.extension.createIntent
 import com.crocodic.core.extension.openActivity
+import com.crocodic.core.extension.tos
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -28,6 +30,12 @@ class ProfileActivity : BaseActivity<ActivityProfileBinding, ProfileViewModel>(R
         binding.btnEditProfile.setOnClickListener {
             activityLauncher.launch(createIntent<UpdateProfileActivity>()) {
                 getUser()
+                if (it.resultCode == 7) {
+                    viewModel.getProfile() {
+                        getUser()
+                    }
+                    observe()
+                }
             }
         }
 
@@ -35,10 +43,16 @@ class ProfileActivity : BaseActivity<ActivityProfileBinding, ProfileViewModel>(R
             openActivity<UpdatePasswordActivity>()
         }
 
+        binding.btnSave.setOnClickListener {
+            openActivity<FavoriteActivity>()
+        }
+
         binding.btnLogout.setOnClickListener {
             viewModel.logout()
         }
+    }
 
+    private fun observe() {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 launch {

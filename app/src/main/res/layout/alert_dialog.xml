@@ -3,8 +3,8 @@
     android:id="@+id/alert_dialog"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="center"
     android:layout_margin="32dp"
+    android:gravity="center"
     android:orientation="vertical"
     android:padding="12dp">
 
@@ -13,8 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp"
-        android:text="Do you want to leave this?"
         android:fontFamily="@font/inter_regular"
+        android:text="Do you want to leave this?"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="17sp" />
@@ -33,11 +33,11 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight="1"
-            android:textColor="@color/light_primer"
             android:background="@drawable/btn_cancel"
             android:fontFamily="@font/inter_regular"
             android:text="Cancel"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            android:textColor="@color/light_primer" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_confirm"
@@ -45,11 +45,11 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight="1"
-            android:textColor="@color/text_red"
             android:background="@drawable/btn_discard"
             android:fontFamily="@font/inter_regular"
             android:text="Continue"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            android:textColor="@color/text_red" />
 
     </LinearLayout>
 </LinearLayout>

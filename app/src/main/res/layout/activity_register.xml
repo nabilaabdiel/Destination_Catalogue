@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
-    <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -31,19 +31,19 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginStart="38dp"
-                android:layout_marginEnd="38dp"
                 android:layout_marginTop="40dp"
+                android:layout_marginEnd="38dp"
                 android:fontFamily="@font/inter_regular"
                 android:gravity="center_vertical"
-                app:boxStrokeColor="@color/light_primer"
-                app:boxCornerRadiusBottomStart="5dp"
-                app:boxCornerRadiusBottomEnd="5dp"
-                app:boxCornerRadiusTopEnd="5dp"
-                app:boxCornerRadiusTopStart="5dp"
-                app:boxStrokeWidth="1dp"
-                app:hintTextColor="@color/light_primer"
                 android:inputType="text"
                 android:textSize="14sp"
+                app:boxCornerRadiusBottomEnd="5dp"
+                app:boxCornerRadiusBottomStart="5dp"
+                app:boxCornerRadiusTopEnd="5dp"
+                app:boxCornerRadiusTopStart="5dp"
+                app:boxStrokeColor="@color/light_primer"
+                app:boxStrokeWidth="1dp"
+                app:hintTextColor="@color/light_primer"
                 tools:ignore="Autofill">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -54,7 +54,7 @@
                     android:fontFamily="@font/inter_regular"
                     android:hint="Username"
                     android:inputType="text"
-                    android:textSize="14sp"/>
+                    android:textSize="14sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -65,18 +65,18 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginStart="38dp"
-                android:layout_marginEnd="38dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginEnd="38dp"
                 android:fontFamily="@font/inter_regular"
                 android:gravity="center_vertical"
-                app:boxStrokeColor="@color/light_primer"
-                app:boxCornerRadiusBottomStart="5dp"
+                android:textSize="14sp"
                 app:boxCornerRadiusBottomEnd="5dp"
+                app:boxCornerRadiusBottomStart="5dp"
                 app:boxCornerRadiusTopEnd="5dp"
                 app:boxCornerRadiusTopStart="5dp"
+                app:boxStrokeColor="@color/light_primer"
                 app:boxStrokeWidth="1dp"
                 app:hintTextColor="@color/light_primer"
-                android:textSize="14sp"
                 tools:ignore="Autofill">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -87,36 +87,36 @@
                     android:fontFamily="@font/inter_regular"
                     android:hint="E-mail"
                     android:inputType="textEmailAddress"
-                    android:textSize="14sp"/>
+                    android:textSize="14sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginStart="38dp"
-                android:layout_marginEnd="38dp">
+                android:layout_marginEnd="38dp"
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="11sp"
                     android:layout_marginTop="4dp"
-                    android:textStyle="italic"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="*Please note Phone number is required at this time"
                     android:textColor="@color/black"
-                    android:fontFamily="@font/inter_regular"
-                    android:text="*Please note Phone number is required at this time"/>
+                    android:textSize="11sp"
+                    android:textStyle="italic" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="11sp"
-                    android:layout_marginTop="4dp"
                     android:layout_marginStart="4dp"
-                    android:textStyle="italic"
+                    android:layout_marginTop="4dp"
                     android:fontFamily="@font/inter_regular"
-                    android:text="(Optional)"/>
+                    android:text="(Optional)"
+                    android:textSize="11sp"
+                    android:textStyle="italic" />
 
             </LinearLayout>
 
@@ -127,18 +127,18 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginStart="38dp"
-                android:layout_marginEnd="38dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginEnd="38dp"
                 android:fontFamily="@font/inter_regular"
                 android:gravity="center_vertical"
-                app:boxStrokeColor="@color/light_primer"
-                app:boxCornerRadiusBottomStart="5dp"
+                android:textSize="14sp"
                 app:boxCornerRadiusBottomEnd="5dp"
+                app:boxCornerRadiusBottomStart="5dp"
                 app:boxCornerRadiusTopEnd="5dp"
                 app:boxCornerRadiusTopStart="5dp"
+                app:boxStrokeColor="@color/light_primer"
                 app:boxStrokeWidth="1dp"
                 app:hintTextColor="@color/light_primer"
-                android:textSize="14sp"
                 tools:ignore="Autofill">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -149,7 +149,7 @@
                     android:fontFamily="@font/inter_regular"
                     android:hint="Phone Number"
                     android:inputType="phone"
-                    android:textSize="14sp"/>
+                    android:textSize="14sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -164,15 +164,15 @@
                 android:layout_marginEnd="38dp"
                 android:fontFamily="@font/inter_regular"
                 android:gravity="center_vertical"
-                app:boxStrokeColor="@color/light_primer"
-                app:boxCornerRadiusBottomStart="5dp"
+                android:textSize="14sp"
                 app:boxCornerRadiusBottomEnd="5dp"
+                app:boxCornerRadiusBottomStart="5dp"
                 app:boxCornerRadiusTopEnd="5dp"
                 app:boxCornerRadiusTopStart="5dp"
+                app:boxStrokeColor="@color/light_primer"
                 app:boxStrokeWidth="1dp"
                 app:hintTextColor="@color/light_primer"
                 app:passwordToggleEnabled="true"
-                android:textSize="14sp"
                 tools:ignore="Autofill">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -183,19 +183,19 @@
                     android:fontFamily="@font/inter_regular"
                     android:hint="Password"
                     android:inputType="textPassword"
-                    android:textSize="15sp"/>
+                    android:textSize="15sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="11sp"
                 android:layout_marginStart="38dp"
                 android:layout_marginTop="4dp"
-                android:textStyle="italic"
                 android:fontFamily="@font/inter_regular"
-                android:text="*At least 8 digits"/>
+                android:text="*At least 8 digits"
+                android:textSize="11sp"
+                android:textStyle="italic" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/input_confirm"
@@ -208,15 +208,15 @@
                 android:layout_marginEnd="38dp"
                 android:fontFamily="@font/inter_regular"
                 android:gravity="center_vertical"
-                app:boxStrokeColor="@color/light_primer"
-                app:boxCornerRadiusBottomStart="5dp"
+                android:textSize="14sp"
                 app:boxCornerRadiusBottomEnd="5dp"
+                app:boxCornerRadiusBottomStart="5dp"
                 app:boxCornerRadiusTopEnd="5dp"
                 app:boxCornerRadiusTopStart="5dp"
+                app:boxStrokeColor="@color/light_primer"
                 app:boxStrokeWidth="1dp"
                 app:hintTextColor="@color/light_primer"
                 app:passwordToggleEnabled="true"
-                android:textSize="14sp"
                 tools:ignore="Autofill">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -227,7 +227,7 @@
                     android:fontFamily="@font/inter_regular"
                     android:hint="Confirmation Password"
                     android:inputType="textPassword"
-                    android:textSize="15sp"/>
+                    android:textSize="15sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -257,8 +257,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/inter_medium"
-                    android:textColor="@color/black"
-                    android:text="Already have an account?" />
+                    android:text="Already have an account?"
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/btn_login"

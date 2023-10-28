@@ -8,4 +8,5 @@
     <string name="password">Password</string>
     <string name="map_route">Map Route</string>
     <string name="category">Category :</string>
+    <string name="send_to">Share to…</string>
 </resources>

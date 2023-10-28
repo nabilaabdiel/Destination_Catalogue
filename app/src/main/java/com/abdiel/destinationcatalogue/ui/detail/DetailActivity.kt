@@ -2,9 +2,9 @@ package com.abdiel.destinationcatalogue.ui.detail
 
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.core.view.isVisible
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
@@ -43,15 +43,21 @@ class DetailActivity :
 
         initBtnSave()
 
+        binding.btnShare.setOnClickListener {
+            val shareText = "Destination : ${destination?.name}\nAddress: \n   ${destination?.address}"
+            val shareIntent = Intent()
+            shareIntent.action = Intent.ACTION_SEND
+            shareIntent.type = "text/plain"
+            shareIntent.putExtra(Intent.EXTRA_TEXT, shareText)
+            startActivity(Intent.createChooser(shareIntent,getString(R.string.send_to)))
+        }
+
         binding.btnUnsaved.setOnClickListener {
             viewModel.addBookmark(destination?.id)
-            binding.root.snacked("Saved")
-
         }
 
         binding.btnSaved.setOnClickListener {
-            viewModel.addBookmark(destination?.id)
-            binding.root.snacked("Unsaved")
+            viewModel.removeBookmark(destination?.id)
         }
 
         binding.btnRute.setOnClickListener {
@@ -73,7 +79,17 @@ class DetailActivity :
                 launch {
                     viewModel.apiResponse.collect {
                         if (it.status == ApiStatus.SUCCESS) {
-                            setResult(1)
+                            if (it.message == "save success") {
+                                binding.root.snacked("Saved")
+                                binding.btnUnsaved.isVisible = false
+                                binding.btnSaved.isVisible = true
+                                setResult(Const.LIST.SAVED_DESTINATION)
+                            } else {
+                                binding.root.snacked("Unsaved")
+                                binding.btnUnsaved.isVisible = true
+                                binding.btnSaved.isVisible = false
+                                setResult(Const.LIST.UNSAVED_DESTINATION)
+                            }
                         }
                     }
                 }

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
+
     <data>
+
         <variable
             name="user"
             type="com.abdiel.destinationcatalogue.data.user.User" />
@@ -40,26 +42,26 @@
                         android:id="@+id/tv_slider"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:layout_constraintTop_toBottomOf="@id/bar_home"
-                        app:layout_constraintStart_toStartOf="parent"
-                        android:layout_marginTop="12dp"
                         android:layout_marginStart="24dp"
+                        android:layout_marginTop="12dp"
                         android:fontFamily="@font/inter_semi_bold"
+                        android:text="Interesting and popular tourist spots"
                         android:textColor="@color/black"
                         android:textSize="14sp"
-                        android:text="Interesting and popular tourist spots"/>
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/bar_home" />
 
                     <com.denzcoskun.imageslider.ImageSlider
                         android:id="@+id/iv_slider"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
+                        android:layout_marginTop="12dp"
                         app:iss_auto_cycle="true"
                         app:iss_period="1500"
-                        android:layout_marginTop="12dp"
                         app:layout_constraintDimensionRatio="16:9"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tv_slider"/>
+                        app:layout_constraintTop_toBottomOf="@id/tv_slider" />
 
                     <View
                         android:id="@+id/v_parent"
@@ -113,16 +115,16 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="56dp"
                                         android:layout_margin="4dp"
-                                        app:cardElevation="4dp"
-                                        app:cardCornerRadius="10dp">
+                                        app:cardCornerRadius="10dp"
+                                        app:cardElevation="4dp">
 
                                         <ImageView
                                             android:id="@+id/iv_children"
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
                                             android:adjustViewBounds="true"
-                                            android:scaleType="centerCrop"
                                             android:padding="18dp"
+                                            android:scaleType="centerCrop"
                                             android:src="@drawable/category_children" />
 
                                     </androidx.cardview.widget.CardView>
@@ -130,19 +132,19 @@
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:textColor="@color/black"
+                                        android:layout_gravity="center"
                                         android:fontFamily="@font/inter_medium"
                                         android:text="Children"
-                                        android:textSize="12sp"
-                                        android:layout_gravity="center"/>
+                                        android:textColor="@color/black"
+                                        android:textSize="12sp" />
 
                                 </LinearLayout>
 
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_weight="1"
                                     android:layout_marginStart="28dp"
+                                    android:layout_weight="1"
                                     android:orientation="vertical">
 
                                     <androidx.cardview.widget.CardView
@@ -150,16 +152,16 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="56dp"
                                         android:layout_margin="4dp"
-                                        app:cardElevation="4dp"
-                                        app:cardCornerRadius="10dp">
+                                        app:cardCornerRadius="10dp"
+                                        app:cardElevation="4dp">
 
                                         <ImageView
                                             android:id="@+id/iv_park"
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
                                             android:adjustViewBounds="true"
-                                            android:scaleType="centerCrop"
                                             android:padding="16dp"
+                                            android:scaleType="centerCrop"
                                             android:src="@drawable/category_nature" />
 
                                     </androidx.cardview.widget.CardView>
@@ -167,19 +169,19 @@
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:textColor="@color/black"
+                                        android:layout_gravity="center"
                                         android:fontFamily="@font/inter_medium"
                                         android:text="Nature"
-                                        android:textSize="12sp"
-                                        android:layout_gravity="center"/>
+                                        android:textColor="@color/black"
+                                        android:textSize="12sp" />
 
                                 </LinearLayout>
 
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_weight="1"
                                     android:layout_marginStart="28dp"
+                                    android:layout_weight="1"
                                     android:orientation="vertical">
 
                                     <androidx.cardview.widget.CardView
@@ -187,16 +189,16 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="56dp"
                                         android:layout_margin="4dp"
-                                        app:cardElevation="4dp"
-                                        app:cardCornerRadius="10dp">
+                                        app:cardCornerRadius="10dp"
+                                        app:cardElevation="4dp">
 
                                         <ImageView
                                             android:id="@+id/iv_all"
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
                                             android:adjustViewBounds="true"
-                                            android:scaleType="centerCrop"
                                             android:padding="18dp"
+                                            android:scaleType="centerCrop"
                                             android:src="@drawable/category_all" />
 
                                     </androidx.cardview.widget.CardView>
@@ -204,11 +206,11 @@
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:textColor="@color/black"
+                                        android:layout_gravity="center"
                                         android:fontFamily="@font/inter_medium"
                                         android:text="All"
-                                        android:textSize="12sp"
-                                        android:layout_gravity="center"/>
+                                        android:textColor="@color/black"
+                                        android:textSize="12sp" />
 
                                 </LinearLayout>
 
@@ -272,19 +274,19 @@
                 android:layout_weight="1"
                 android:background="@drawable/background_search"
                 android:drawableEnd="@drawable/ic_round_search_24"
-                android:hint="Search"
                 android:fontFamily="@font/inter_regular"
+                android:hint="Search"
                 android:iconifiedByDefault="false"
                 android:padding="12dp" />
 
             <ImageView
                 android:id="@+id/cv_profile"
+                imageUrl="@{user.profile_photo_path}"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:layout_marginEnd="24dp"
-                imageUrl="@{user.profile_photo_path}"
                 android:background="@drawable/circle"
-                android:src="@drawable/ic_round_person_24"/>
+                android:src="@drawable/ic_round_person_24" />
 
         </LinearLayout>
 

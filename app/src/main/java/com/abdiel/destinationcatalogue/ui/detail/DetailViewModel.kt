@@ -28,7 +28,20 @@ class DetailViewModel @Inject constructor(
         ApiObserver(
             { apiService.addBookmark(destination_id) }, false, object : ApiObserver.ResponseListener {
                 override suspend fun onSuccess(response: JSONObject) {
-                    _apiResponse.emit(ApiResponse().responseSuccess())
+                    _apiResponse.emit(ApiResponse().responseSuccess("save success"))
+                }
+
+                override suspend fun onError(response: ApiResponse) {
+                    super.onError(response)
+                }
+            })
+    }
+
+    fun removeBookmark(destination_id: Int?) = viewModelScope.launch {
+        ApiObserver(
+            { apiService.removeBookmark(destination_id) }, false, object : ApiObserver.ResponseListener {
+                override suspend fun onSuccess(response: JSONObject) {
+                    _apiResponse.emit(ApiResponse().responseSuccess("remove success"))
                 }
 
                 override suspend fun onError(response: ApiResponse) {
